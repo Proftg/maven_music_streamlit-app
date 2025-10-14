@@ -41,15 +41,11 @@ st.markdown("""
 
 # Sidebar navigation
 with st.sidebar:
-    # Logo Maven Music
-    st.markdown("""
-    <div style='text-align: center; margin-bottom: 2rem;'>
-        <h2 style='color: #1DB954; font-size: 2rem;'>MAVEN</h2>
-        <div style='color: #FF0000; font-size: 3rem;'>●</div>
-        <h2 style='color: #191414; font-size: 2rem;'>MUSIC</h2>
-        <p style='color: #888; font-size: 0.85rem;'>SINCE 1996</p>
-    </div>
-    """, unsafe_allow_html=True)
+    # Logo Maven Music - OPTION 1: URL directe (décommenter cette ligne)
+    # st.image("https://i.imgur.com/votre_url_here.png", use_column_width=True)
+    
+    # OPTION 2: Fichier local (décommenter cette ligne et placer maven_logo.png dans le dossier du projet)
+    st.image("maven_logo.png", use_column_width=True)
     
     st.markdown("---")
     st.markdown("### Customer Churn Analysis Dashboard")
@@ -96,6 +92,17 @@ if page == "Home":
         <h2 style='color: #666; font-size: 1.8rem; margin-top: 2rem;'>Customer Churn Analysis</h2>
     </div>
     """, unsafe_allow_html=True)
+    
+    # Logo Maven Music sur la page d'accueil
+    col_logo = st.columns([1])[0]
+    with col_logo:
+        # OPTION 1: URL directe (décommenter cette ligne)
+        # st.image("https://i.imgur.com/votre_url_here.png", use_column_width=True)
+        
+        # OPTION 2: Fichier local (décommenter cette ligne)
+        st.image("maven_logo.png", use_column_width=True)
+    
+    st.markdown("---")
     
     col1, col2 = st.columns([2, 1])
     
