@@ -41,13 +41,7 @@ st.markdown("""
 
 # Sidebar navigation
 with st.sidebar:
-    # Logo Maven Music - OPTION 1: URL directe (décommenter cette ligne)
-    # st.image("https://i.imgur.com/votre_url_here.png", use_column_width=True)
-    
-    # OPTION 2: Fichier local (décommenter cette ligne et placer maven_logo.png dans le dossier du projet)
-    st.image("maven_logo.png", use_column_width=True)
-    
-    st.markdown("---")
+    st.markdown("🎵 **Maven Music**")
     st.markdown("### Customer Churn Analysis Dashboard")
     
     page = st.radio(
@@ -83,26 +77,7 @@ customers_df = load_sample_data()
 
 # PAGE 1: HOME
 if page == "Home":
-    st.markdown("""
-    <div style='text-align: center; margin-bottom: 3rem;'>
-        <h1 style='color: #1DB954; font-size: 3rem; margin: 0;'>MAVEN</h1>
-        <div style='color: #FF0000; font-size: 4rem; margin: 0.5rem 0;'>●</div>
-        <h1 style='color: #191414; font-size: 3rem; margin: 0;'>MUSIC</h1>
-        <p style='color: #888; font-size: 0.95rem; margin-top: 0.5rem;'>SINCE 1996</p>
-        <h2 style='color: #666; font-size: 1.8rem; margin-top: 2rem;'>Customer Churn Analysis</h2>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    # Logo Maven Music sur la page d'accueil
-    col_logo = st.columns([1])[0]
-    with col_logo:
-        # OPTION 1: URL directe (décommenter cette ligne)
-        # st.image("https://i.imgur.com/votre_url_here.png", use_column_width=True)
-        
-        # OPTION 2: Fichier local (décommenter cette ligne)
-        st.image("maven_logo.png", use_column_width=True)
-    
-    st.markdown("---")
+    st.markdown('<h1 class="main-header">🎵 Maven Music Customer Churn Analysis</h1>', unsafe_allow_html=True)
     
     col1, col2 = st.columns([2, 1])
     
@@ -185,7 +160,6 @@ elif page == "Exploratory Analysis":
         ax.set_ylabel("Count")
         ax.set_title("Customer Distribution by Subscription Tier")
         st.pyplot(fig)
-        plt.close()
     
     with col2:
         st.markdown("### Churn Distribution")
@@ -196,7 +170,6 @@ elif page == "Exploratory Analysis":
         ax.pie(churn_counts.values, labels=labels, autopct='%1.1f%%', colors=colors_churn, startangle=90)
         ax.set_title("Customer Churn Status")
         st.pyplot(fig)
-        plt.close()
     
     st.markdown("---")
     
@@ -210,7 +183,6 @@ elif page == "Exploratory Analysis":
         ax.set_ylabel("Frequency")
         ax.set_title("Distribution of User Listening Frequency")
         st.pyplot(fig)
-        plt.close()
     
     with col2:
         st.markdown("### Subscription Duration Analysis")
@@ -220,7 +192,6 @@ elif page == "Exploratory Analysis":
         ax.set_ylabel("Frequency")
         ax.set_title("Distribution of Subscription Duration")
         st.pyplot(fig)
-        plt.close()
 
 # PAGE 4: CHURN ANALYSIS
 elif page == "Churn Analysis":
@@ -241,20 +212,18 @@ elif page == "Churn Analysis":
         ax.set_ylabel("Churn Rate (%)")
         ax.set_title("Churn Rate by Subscription Tier")
         st.pyplot(fig)
-        plt.close()
         
         st.dataframe(churn_by_tier[['churn_rate']], use_container_width=True)
     
     with col2:
         st.markdown("### Churn by Engagement Level")
-        customers_df_temp = customers_df.copy()
-        customers_df_temp['engagement_level'] = pd.cut(
-            customers_df_temp['total_listens'],
+        customers_df['engagement_level'] = pd.cut(
+            customers_df['total_listens'],
             bins=[0, 500, 1500, 5000],
             labels=['Low', 'Medium', 'High']
         )
         
-        churn_by_engagement = customers_df_temp.groupby('engagement_level')['churn'].agg(['sum', 'count'])
+        churn_by_engagement = customers_df.groupby('engagement_level')['churn'].agg(['sum', 'count'])
         churn_by_engagement['churn_rate'] = (churn_by_engagement['sum'] / churn_by_engagement['count'] * 100).round(2)
         
         fig, ax = plt.subplots(figsize=(8, 5))
@@ -265,7 +234,6 @@ elif page == "Churn Analysis":
         ax.set_ylabel("Churn Rate (%)")
         ax.set_title("Churn Rate by User Engagement Level")
         st.pyplot(fig)
-        plt.close()
         
         st.dataframe(churn_by_engagement[['churn_rate']], use_container_width=True)
     
@@ -285,7 +253,6 @@ elif page == "Churn Analysis":
     ax.set_title("Feature Correlation with Customer Churn")
     ax.axvline(x=0, color='black', linestyle='-', linewidth=0.5)
     st.pyplot(fig)
-    plt.close()
 
 # PAGE 5: FEATURE ENGINEERING
 elif page == "Feature Engineering":
