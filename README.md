@@ -1,53 +1,53 @@
 # 🎵 Maven Music - Customer Churn Analysis Dashboard
 
-## Vue d'ensemble du projet
+## Project Overview
 
-Maven Music est une plateforme d'analyse avancée dédiée à l'investigation des facteurs contribuant à l'attrition des clients dans un service de streaming musical. Ce projet intègre des techniques d'analyse exploratoire des données (EDA), d'ingénierie des caractéristiques et de visualisation statistique pour identifier les patterns comportementaux associés au churn des utilisateurs.
+Maven Music is an advanced analytics platform dedicated to investigating factors contributing to customer attrition in a music streaming service. This project integrates exploratory data analysis (EDA) techniques, feature engineering, and statistical visualization to identify behavioral patterns associated with user churn.
 
-## Objectifs
+## Objectives
 
-L'initiative repose sur les objectifs académiques et professionnels suivants :
+The initiative is grounded on the following academic and professional objectives:
 
-- **Identification des facteurs de churn** : Déterminer les variables comportementales et structurelles corrélées à l'attrition
-- **Analyse comparative** : Évaluer les taux de churn en fonction des tiers d'abonnement et des niveaux d'engagement
-- **Feature engineering** : Construire des variables dérivées capturant les dynamiques utilisateur complexes
-- **Insights stratégiques** : Développer des recommandations quantifiées pour les interventions de rétention
+- **Churn factor identification** : Determine behavioral and structural variables correlated with customer attrition
+- **Comparative analysis** : Evaluate churn rates across subscription tiers and engagement levels
+- **Feature engineering** : Construct derived variables capturing complex user dynamics
+- **Strategic insights** : Develop quantified recommendations for retention interventions
 
-## Caractéristiques principales
+## Key Features
 
-### 📊 Pages du tableau de bord
+### 📊 Dashboard Pages
 
-1. **Home** - Aperçu du projet et métriques synthétiques
-2. **Data Overview** - Analyse descriptive et qualité des données
-3. **Exploratory Analysis** - Visualisations distributionnelles univariées et bivariées
-4. **Churn Analysis** - Analyse segmentée du churn par tier et engagement
-5. **Feature Engineering** - Documentation des variables créées et étapes de préparation
-6. **Insights & Recommendations** - Résumé des découvertes et plan d'action
+1. **Home** - Project overview and key synthetic metrics
+2. **Data Overview** - Descriptive analysis and data quality assessment
+3. **Exploratory Analysis** - Univariate and bivariate distributional visualizations
+4. **Churn Analysis** - Segmented churn analysis by tier and engagement level
+5. **Feature Engineering** - Documentation of created variables and preparation steps
+6. **Insights & Recommendations** - Summary of findings and action plan
 
-### 🔧 Technologies utilisées
+### 🔧 Technologies Used
 
-- **Streamlit** : Framework de visualisation interactive
-- **Pandas** : Manipulation et transformation des données
-- **NumPy** : Calculs numériques vectorisés
-- **Matplotlib & Seaborn** : Visualisation statistique
-- **Python 3.8+** : Langage de programmation principal
+- **Streamlit** : Interactive visualization framework
+- **Pandas** : Data manipulation and transformation
+- **NumPy** : Vectorized numerical computing
+- **Matplotlib & Seaborn** : Statistical visualization
+- **Python 3.8+** : Primary programming language
 
 ## Installation
 
-### Prérequis
+### Prerequisites
 
-- Python 3.8 ou supérieur
-- pip (gestionnaire de paquets Python)
+- Python 3.8 or higher
+- pip (Python package manager)
 
-### Étapes d'installation
+### Installation Steps
 
-1. **Clonez ou téléchargez le projet**
+1. **Clone or download the project**
    ```bash
    git clone <repository_url>
    cd maven-music-churn-analysis
    ```
 
-2. **Créez un environnement virtuel** (recommandé)
+2. **Create a virtual environment** (recommended)
    ```bash
    python -m venv venv
    
@@ -58,136 +58,136 @@ L'initiative repose sur les objectifs académiques et professionnels suivants :
    source venv/bin/activate
    ```
 
-3. **Installez les dépendances**
+3. **Install dependencies**
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Ajoutez le logo Maven Music**
-   - Nommez votre image `maven_logo.png`
-   - Placez-la dans le répertoire racine du projet
+4. **Add Maven Music logo**
+   - Name your image `maven_logo.png`
+   - Place it in the project root directory
 
-## Utilisation
+## Usage
 
-### Lancer l'application
+### Launch the Application
 
 ```bash
 streamlit run app.py
 ```
 
-L'application s'ouvrira automatiquement dans votre navigateur par défaut à l'adresse `http://localhost:8501`
+The application will automatically open in your default web browser at `http://localhost:8501`
 
 ### Navigation
 
-Utilisez la barre latérale (sidebar) pour naviguer entre les différentes pages d'analyse. Chaque page offre une perspective distinct du phénomène de churn.
+Use the sidebar to navigate between different analysis pages. Each page offers a distinct perspective on the churn phenomenon.
 
-## Structure des données
+## Data Structure
 
-### Variables du dataset
+### Dataset Variables
 
 | Variable | Type | Description |
 |----------|------|-------------|
-| customer_id | Integer | Identifiant unique du client |
-| subscription_tier | Categorical | Tier d'abonnement (Free, Premium, Student) |
-| subscription_duration_days | Integer | Durée en jours depuis l'inscription |
-| total_listens | Integer | Nombre total de titres écoutés |
-| playlist_count | Integer | Nombre de playlists créées |
-| days_since_activity | Integer | Jours écoulés depuis la dernière activité |
-| churn | Binary | Statut de churn (0 = Conservé, 1 = Churné) |
+| customer_id | Integer | Unique customer identifier |
+| subscription_tier | Categorical | Subscription tier (Free, Premium, Student) |
+| subscription_duration_days | Integer | Duration in days since registration |
+| total_listens | Integer | Total number of tracks listened |
+| playlist_count | Integer | Number of playlists created |
+| days_since_activity | Integer | Days elapsed since last activity |
+| churn | Binary | Churn status (0 = Retained, 1 = Churned) |
 
-### Variables dérivées
+### Derived Variables
 
-- **engagement_level** : Catégorisation trinaire basée sur la fréquence d'écoute
-- **churn_rate** : Proportion d'utilisateurs ayant churné par segment
+- **engagement_level** : Trinomial categorization based on listening frequency
+- **churn_rate** : Proportion of users who churned by segment
 
-## Résultats clés
+## Key Findings
 
-### Découvertes principales
+### Main Discoveries
 
-1. **Impact de l'engagement** : Les utilisateurs avec engagement faible présentent des taux de churn significativement plus élevés
-2. **Variation par tier** : Les patterns d'attrition diffèrent substantiellement entre les tiers d'abonnement
-3. **Fenêtre critique** : L'inactivité prolongée (>30 jours) est fortement associée au churn
-4. **Effet de la curation** : La création de playlists corrèle négativement avec l'attrition
+1. **Engagement impact** : Low-engagement users exhibit significantly higher churn rates
+2. **Tier variation** : Attrition patterns differ substantially across subscription tiers
+3. **Critical window** : Prolonged inactivity (>30 days) is strongly associated with churn
+4. **Curation effect** : Playlist creation correlates negatively with attrition
 
-### Recommandations stratégiques
+### Strategic Recommendations
 
-| Priorité | Action | Segment cible | Impact anticipé |
+| Priority | Action | Target Segment | Expected Impact |
 |----------|--------|-----------------|-----------------|
-| Haute | Campagnes de ré-engagement | Utilisateurs inactifs (>30j) | Réduction du churn de 15-20% |
-| Haute | Incitations Premium | Conversion Free-to-Premium | Augmentation ARPU |
-| Moyenne | Recommandations personnalisées | Utilisateurs faible engagement | +25% engagement |
-| Moyenne | Tutoriels création playlists | Nouveaux utilisateurs | Rétention +90j améliorée |
-| Basse | Fonctionnalités communautaires | Utilisateurs actifs | Renforcement du lien communautaire |
+| High | Re-engagement campaigns | Inactive users (>30 days) | Reduce churn by 15-20% |
+| High | Premium tier incentives | Free-to-Premium conversion | Increase ARPU |
+| Medium | Personalized recommendations | Low engagement users | +25% engagement |
+| Medium | Playlist creation tutorials | New users | Improved 90-day retention |
+| Low | Community features | Active users | Strengthen community bonds |
 
-## Phases du projet
+## Project Phases
 
-- ✅ **Collecte de données** - Agrégation historique des données d'abonnement
-- ✅ **Nettoyage des données** - Assurance qualité et standardisation
-- ◈ **Analyse exploratoire** - Identification de patterns et visualisations
-- ◈ **Ingénierie des features** - Création de variables dérivées
-- ⊗ **Préparation pour modélisation** - Structuration pour ML (à venir)
+- ✅ **Data Collection** - Historical aggregation of subscription data
+- ✅ **Data Cleaning** - Quality assurance and standardization
+- ◈ **Exploratory Analysis** - Pattern identification and visualizations
+- ◈ **Feature Engineering** - Creation of derived variables
+- ⊗ **Model Preparation** - Structuring for ML pipeline (upcoming)
 
-## Architecture du code
+## Code Architecture
 
 ```
 maven-music-churn-analysis/
-├── app.py                 # Application Streamlit principale
-├── maven_logo.png         # Logo Maven Music
-├── requirements.txt       # Dépendances Python
-├── README.md              # Documentation du projet
-└── data/                  # Données (généré dynamiquement)
-    └── sample_data.csv    # Données d'exemple
+├── app.py                 # Main Streamlit application
+├── maven_logo.png         # Maven Music logo
+├── requirements.txt       # Python dependencies
+├── README.md              # Project documentation
+└── data/                  # Data directory (dynamically generated)
+    └── sample_data.csv    # Sample data
 ```
 
-## Extensions futures
+## Future Extensions
 
-1. **Modélisation prédictive** : Développement de modèles de classification (Logistic Regression, Random Forest, XGBoost)
-2. **Scoring de propension** : Calcul de scores de propension au churn par client
-3. **Analyse de cohorte** : Suivi longitudinal par cohorte d'inscription
-4. **A/B Testing** : Évaluation d'interventions de rétention
-5. **Automatisation** : Pipeline ETL pour mise à jour quotidienne/hebdomadaire
+1. **Predictive Modeling** : Development of classification models (Logistic Regression, Random Forest, XGBoost)
+2. **Propensity Scoring** : Customer-level churn propensity score calculation
+3. **Cohort Analysis** : Longitudinal tracking by registration cohort
+4. **A/B Testing** : Evaluation of retention intervention strategies
+5. **Automation** : ETL pipeline for daily/weekly data updates
 
-## Configuration système recommandée
+## Recommended System Configuration
 
-- **Processeur** : Dual-core minimum
-- **Mémoire RAM** : 4 GB minimum (8 GB recommandé)
-- **Espace disque** : 500 MB minimum
-- **Navigateur** : Chrome, Firefox, Safari (version récente)
+- **Processor** : Dual-core minimum
+- **RAM** : 4 GB minimum (8 GB recommended)
+- **Disk Space** : 500 MB minimum
+- **Browser** : Chrome, Firefox, Safari (recent version)
 
-## Dépannage
+## Troubleshooting
 
-### L'application ne se lance pas
+### Application fails to launch
 ```bash
-# Vérifiez que Streamlit est correctement installé
+# Verify Streamlit is properly installed
 pip install --upgrade streamlit
 
-# Relancez l'application
+# Relaunch the application
 streamlit run app.py
 ```
 
-### Erreur concernant le logo
-- Assurez-vous que `maven_logo.png` est dans le répertoire racine
-- Vérifiez que le nom du fichier correspond exactement (majuscules/minuscules)
+### Logo error
+- Ensure `maven_logo.png` is in the root directory
+- Verify the filename matches exactly (case-sensitive)
 
-### Performance lente
-- Réduisez la taille du dataset dans `load_sample_data()`
-- Augmentez l'allocation mémoire de Python
-- Fermez les autres applications consommatrices de ressources
+### Slow performance
+- Reduce dataset size in `load_sample_data()`
+- Increase Python memory allocation
+- Close other resource-intensive applications
 
-## Contributeurs
+## Contributors
 
-Projet développé comme initiative de science des données pour Maven Music - 2025
+Project developed as a data science initiative for Maven Music - 2025
 
-## Licence
+## License
 
-Ce projet est fourni à titre éducatif et professionnel. Tous les droits sont réservés à Maven Music.
+This project is provided for educational and professional purposes. All rights reserved to Maven Music.
 
-## Contact et support
+## Contact & Support
 
-Pour toute question ou demande de fonctionnalités supplémentaires, veuillez consulter la documentation Streamlit ou contacter l'équipe de projet.
+For questions or feature requests, please consult the Streamlit documentation or contact the project team.
 
 ---
 
-**Dernière mise à jour** : Octobre 2025  
+**Last Updated** : October 2025  
 **Version** : 1.0  
-**Statut** : Phase de préparation des données
+**Status** : Data Preparation Phase
