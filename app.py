@@ -41,7 +41,6 @@ st.markdown("""
 
 # Sidebar navigation
 with st.sidebar:
-    st.markdown("🎵 **Maven Music**")
     st.markdown("### Customer Churn Analysis Dashboard")
     
     page = st.radio(
