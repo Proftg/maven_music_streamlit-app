@@ -121,11 +121,11 @@ Use the sidebar to navigate between different analysis pages. Each page offers a
 
 ## Project Phases
 
-- ✅ **Data Collection** - Historical aggregation of subscription data
-- ✅ **Data Cleaning** - Quality assurance and standardization
-- ◈ **Exploratory Analysis** - Pattern identification and visualizations
-- ◈ **Feature Engineering** - Creation of derived variables
-- ⊗ **Model Preparation** - Structuring for ML pipeline (upcoming)
+-  **Data Collection** - Historical aggregation of subscription data
+-  **Data Cleaning** - Quality assurance and standardization
+-  **Exploratory Analysis** - Pattern identification and visualizations
+-  **Feature Engineering** - Creation of derived variables
+-  **Model Preparation** - Structuring for ML pipeline (upcoming)
 
 ## Code Architecture
 
