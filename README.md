@@ -1,4 +1,4 @@
-# 🎵 Maven Music - Customer Churn Analysis Dashboard
+#  Maven Music, Customer Churn Analysis Dashboard
 
 ## Project Overview
 
@@ -15,7 +15,7 @@ The initiative is grounded on the following academic and professional objectives
 
 ## Key Features
 
-### 📊 Dashboard Pages
+###  Dashboard Pages
 
 1. **Home** - Project overview and key synthetic metrics
 2. **Data Overview** - Descriptive analysis and data quality assessment
@@ -24,7 +24,7 @@ The initiative is grounded on the following academic and professional objectives
 5. **Feature Engineering** - Documentation of created variables and preparation steps
 6. **Insights & Recommendations** - Summary of findings and action plan
 
-### 🔧 Technologies Used
+###  Technologies Used
 
 - **Streamlit** : Interactive visualization framework
 - **Pandas** : Data manipulation and transformation
@@ -174,17 +174,11 @@ streamlit run app.py
 - Increase Python memory allocation
 - Close other resource-intensive applications
 
-## Contributors
-
-Project developed as a data science initiative for Maven Music - 2025
-
 ## License
 
 This project is provided for educational and professional purposes. All rights reserved to Maven Music.
 
-## Contact & Support
 
-For questions or feature requests, please consult the Streamlit documentation or contact the project team.
 
 ---
 
